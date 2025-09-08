@@ -7,11 +7,14 @@ import fs from "node:fs";
 import errorHandler from "./src/helpers/errorhandler.js";
 
 dotenv.config();
+import mongoose from 'mongoose';
 
 const port = process.env.PORT || 8000;
 
 const app = express();
 
+const DB  = 'mongodb+srv://samarthpingat:hahaha123@cluster0.cdydo.mongodb.net/taskfyer?retryWrites=true&w=majority&appName=Cluster0'
+mongoose.connect(DB);
 // middleware
 app.use(
   cors({
